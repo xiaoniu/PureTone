@@ -46,6 +46,7 @@ public class PlayThread extends Thread {
                     AudioFormat.CHANNEL_CONFIGURATION_STEREO, // CHANNEL_CONFIGURATION_MONO,
                     AudioFormat.ENCODING_PCM_8BIT, length, AudioTrack.MODE_STREAM);
             ISPLAYSOUND = true;
+            wave = SinWave.sin(wave, waveLen, length);
         } else {
             return;
         }
@@ -57,10 +58,6 @@ public class PlayThread extends Thread {
         super.run();
         if (null != mAudioTrack)
             mAudioTrack.play();
-
-        //生成正弦波
-        mAudioTrack.play();
-        wave = SinWave.sin(wave, waveLen, length);
         //一直播放
         while (ISPLAYSOUND) {
             mAudioTrack.write(wave, 0, length);

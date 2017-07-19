@@ -1,7 +1,7 @@
 package com.example.puretone;
 
 public class SinWave {
-	/** 正弦波的高度 **/
+	/** 正弦波的高度 2的8次方减1**/
 	public static final int HEIGHT = 127;
 	/** 2PI **/
 	public static final double TWOPI = 2 * 3.1415;
